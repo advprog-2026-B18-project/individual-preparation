@@ -7,10 +7,10 @@ import java.util.List;
 
 @Service
 public class VectorUtilityService {
-    public VectorResponse subtract(List<Integer> v1, List<Integer> v2) {
+    public VectorResponse subtract(List<Integer> vector1, List<Integer> vector2) {
         List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < v1.size(); i++) {
-            result.add(v1.get(i) - v2.get(i));
+        for (int index = 0; index < vector1.size(); index++) {
+            result.add(vector1.get(index) - vector2.get(index));
         }
         VectorResponse response = new VectorResponse();
         response.setResult(result);

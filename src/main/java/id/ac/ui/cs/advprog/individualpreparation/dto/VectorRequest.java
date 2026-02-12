@@ -8,6 +8,6 @@ import java.util.List;
 @Getter
 @Setter
 public class VectorRequest {
-    List<Integer> v1;
-    List<Integer> v2;
+    List<Integer> vector1;
+    List<Integer> vector2;
 }

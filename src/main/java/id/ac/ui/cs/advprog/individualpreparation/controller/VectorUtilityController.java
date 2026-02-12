@@ -14,6 +14,6 @@ public class VectorUtilityController {
 
     @PostMapping("/subtract")
     public VectorResponse subtract(@RequestBody VectorRequest request) {
-        return service.subtract(request.getV1(), request.getV2());
+        return service.subtract(request.getVector1(), request.getVector2());
     }
 }
