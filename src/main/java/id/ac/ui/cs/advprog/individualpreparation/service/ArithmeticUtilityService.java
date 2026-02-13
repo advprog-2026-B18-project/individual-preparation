@@ -32,4 +32,11 @@ public class ArithmeticUtilityService {
         arithmeticResponse.setResult(result);
         return arithmeticResponse;
     }
+
+    public ArithmeticResponse multiply(long o1, long o2){
+        ArithmeticResponse arithmeticResponse = new ArithmeticResponse();
+        arithmeticResponse.setResult(o1*o2);
+        return arithmeticResponse;
+    }
+
 }
