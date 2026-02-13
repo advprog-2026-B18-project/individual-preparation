@@ -1,4 +1,4 @@
-package id.ac.ui.cs.advprog.individualpreparation.model;
+package id.ac.ui.cs.advprog.individualpreparation.dto;
 
 import lombok.Getter;
 import lombok.Setter;
