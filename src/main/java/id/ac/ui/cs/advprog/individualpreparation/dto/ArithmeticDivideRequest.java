@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ArithmeticRequest {
-    long operand1;
-    long operand2;
+public class ArithmeticDivideRequest {
+    double operand1;
+    double operand2;
 }

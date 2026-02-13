@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ArithmeticUtilityService {
-    public ArithmeticDivideResponse divide(long operand1, long operand2) {
-        if (operand2 == 0) {
+    public ArithmeticDivideResponse divide(double o1, double o2) {
+        if (o2 == 0) {
             throw new ArithmeticException("Cannot divide by zero.");
         }
-        double result = (double) operand1 / operand2;
+        double result = o1 / o2;
         ArithmeticDivideResponse response = new ArithmeticDivideResponse();
         response.setResult(result);
         return response;
