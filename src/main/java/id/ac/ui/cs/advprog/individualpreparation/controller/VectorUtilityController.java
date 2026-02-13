@@ -1,5 +1,6 @@
 package id.ac.ui.cs.advprog.individualpreparation.controller;
 
+import id.ac.ui.cs.advprog.individualpreparation.model.ScalarResponse;
 import id.ac.ui.cs.advprog.individualpreparation.dto.VectorRequest;
 import id.ac.ui.cs.advprog.individualpreparation.dto.VectorResponse;
 import id.ac.ui.cs.advprog.individualpreparation.service.VectorUtilityService;
@@ -15,5 +16,21 @@ public class VectorUtilityController {
     @PostMapping("/subtract")
     public VectorResponse subtract(@RequestBody VectorRequest request) {
         return service.subtract(request.getV1(), request.getV2());
+    }
+  
+    @PostMapping("dotProduct")
+    public ScalarResponse dotproduct(@RequestBody VectorRequest request){
+        List<Integer> v1 = request.getV1();
+        List<Integer> v2 = request.getV2();
+
+        return service.dotproduct(v1, v2);
+    }
+  
+    @PostMapping("/add")
+    public VectorResponse add(@RequestBody VectorRequest request){
+        List<Integer> v1 = request.getV1();
+        List<Integer> v2 = request.getV2();
+
+        return service.add(v1, v2);
     }
 }
