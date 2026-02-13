@@ -23,7 +23,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleInvalidRequestBody(
             HttpMessageNotReadableException ex) {
 
-        ErrorResponse error = new ErrorResponse("Invalid request body, input should be integer/vector of integer", ERROR_STATUS);
+        ErrorResponse error = new ErrorResponse(
+                "Invalid request body, input should be integer/vector of integer"
+                , ERROR_STATUS);
 
         return ResponseEntity.badRequest().body(error);
     }
@@ -32,7 +34,10 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleInvalidRequestBody(
             NullPointerException ex) {
 
-        ErrorResponse error = new ErrorResponse("Invalid request body, use v1 and v2 for /vector " + "endpoint, o1 and o2 for /arithmetic endpoint", ERROR_STATUS);
+        ErrorResponse error = new ErrorResponse(
+                "Invalid request body, use v1 and v2 for /vector " +
+                        "endpoint, o1 and o2 for /arithmetic endpoint",
+                ERROR_STATUS);
 
         return ResponseEntity.badRequest().body(error);
     }
