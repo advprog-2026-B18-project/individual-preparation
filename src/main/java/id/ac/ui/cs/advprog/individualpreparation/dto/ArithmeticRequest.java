@@ -6,5 +6,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ArithmeticRequest {
-    long o1, o2;
+    long o1;
+    long o2;
 }
