@@ -10,6 +10,7 @@ import java.util.List;
 public class VectorUtilityService {
 
     public VectorResponse add(List<Integer> v1, List<Integer> v2) {
+        validateVectorSize(v1, v2);
         List<Integer> result = new ArrayList<>();
         int maximumSize = Math.max(v1.size(), v2.size());
         for(int index = 0; index < maximumSize; index++) {
@@ -18,5 +19,11 @@ public class VectorUtilityService {
         VectorResponse vectorResponse = new VectorResponse();
         vectorResponse.setResult(result);
         return vectorResponse;
+    }
+
+    public void validateVectorSize(List<Integer> v1, List<Integer> v2) {
+        if (v1.size() != v2.size()) {
+            throw new IllegalArgumentException("v1 and v2 should have the same size!");
+        }
     }
 }
