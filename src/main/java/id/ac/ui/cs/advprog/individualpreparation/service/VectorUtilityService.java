@@ -7,10 +7,13 @@ import java.util.List;
 
 @Service
 public class VectorUtilityService {
-    public VectorResponse subtract(List<Integer> vector1, List<Integer> vector2) {
+    public VectorResponse subtract(List<Integer> v1, List<Integer> v2) {
         List<Integer> result = new ArrayList<>();
-        for (int index = 0; index < vector1.size(); index++) {
-            result.add(vector1.get(index) - vector2.get(index));
+        if (v1.size() != v2.size()) {
+            throw new IllegalArgumentException("Vectors must have the same length.");
+        }
+        for (int index = 0; index < v1.size(); index++) {
+            result.add(v1.get(index) - v2.get(index));
         }
         VectorResponse response = new VectorResponse();
         response.setResult(result);
