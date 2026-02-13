@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -54,6 +55,19 @@ public class VectorUtilityService {
         return vectorResponse;
     }
 
+    public VectorResponse multiply(List<Integer> v1, List<Integer> v2) {
+        int maximumSize = v1.size();
+        v2 = Collections.nCopies(maximumSize, v2.getFirst());
+
+        List<Integer> result = new ArrayList<>();
+        for(int index = 0; index < maximumSize; index++) {
+            result.add(v1.get(index) * v2.get(index));
+        }
+        VectorResponse vectorResponse = new VectorResponse();
+        vectorResponse.setResult(result);
+        return vectorResponse;
+    }
+  
     public void validateVectorSize(List<Integer> v1, List<Integer> v2) {
         if (v1.size() != v2.size()) {
             throw new IllegalArgumentException("v1 and v2 should have the same size!");
