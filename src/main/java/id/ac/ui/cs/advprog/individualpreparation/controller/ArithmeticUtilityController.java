@@ -25,4 +25,12 @@ public class ArithmeticUtilityController {
         return service.exponent(o1, n);
     }
 
+    @PostMapping("/multiply")
+    public ArithmeticResponse multiply(@RequestBody ArithmeticRequest request){
+        long o1 = request.getO1();
+        long o2 = request.getO2();
+
+        return service.multiply(o1, o2);
+    }
+
 }
