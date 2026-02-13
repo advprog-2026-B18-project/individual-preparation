@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ArithmeticDivideRequest {
-    double operand1;
-    double operand2;
+    double o1;
+    double o2;
 }

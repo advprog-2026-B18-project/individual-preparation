@@ -1,16 +1,12 @@
 package id.ac.ui.cs.advprog.individualpreparation.service;
 
 import id.ac.ui.cs.advprog.individualpreparation.dto.VectorResponse;
-import id.ac.ui.cs.advprog.individualpreparation.model.ScalarResponse;
+import id.ac.ui.cs.advprog.individualpreparation.dto.ScalarResponse;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 @Service
 public class VectorUtilityService {
