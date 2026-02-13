@@ -8,6 +8,7 @@ class IndividualPreparationApplicationTests {
 
     @Test
     void contextLoads() {
+        // Method ini sengaja kosong
     }
 
 }

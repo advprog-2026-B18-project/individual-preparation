@@ -6,7 +6,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ErrorResponse {
-    String message, status;
+    String message;
+    String status;
 
     public ErrorResponse(String message, String status){
         this.message = message;

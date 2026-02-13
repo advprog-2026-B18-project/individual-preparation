@@ -1,7 +1,10 @@
 plugins {
     java
+    jacoco
+    checkstyle
     id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.7"
+    id("org.sonarqube") version "4.4.1.3373"
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -22,6 +25,12 @@ configurations {
 
 repositories {
     mavenCentral()
+}
+
+checkstyle {
+    toolVersion = "10.12.4"
+    configFile = file("$rootDir/config/checkstyle/checkstyle.xml")
+    isIgnoreFailures = false
 }
 
 val seleniumJavaVersion = "4.14.1"
@@ -65,4 +74,40 @@ tasks.register<Test>("functionalTest") {
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+}
+
+tasks.test {
+    filter {
+        excludeTestsMatching("*FunctionalTest")
+    }
+
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
+tasks.withType<Checkstyle>().configureEach {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
+tasks.check {
+    dependsOn(tasks.checkstyleMain)
+    dependsOn(tasks.checkstyleTest)
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "advprog-2026-B18-project_individual-preparation")
+        property("sonar.organization", "advprog-2026-b18-project")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
