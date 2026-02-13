@@ -55,9 +55,9 @@ public class VectorUtilityService {
         return vectorResponse;
     }
 
-    public VectorResponse multiply(List<Integer> v1, List<Integer> x) {
+    public VectorResponse multiply(List<Integer> v1, List<Integer> v2) {
         int maximumSize = v1.size();
-        List<Integer> v2 = Collections.nCopies(maximumSize, x.getFirst());
+        v2 = Collections.nCopies(maximumSize, v2.getFirst());
 
         List<Integer> result = new ArrayList<>();
         for(int index = 0; index < maximumSize; index++) {

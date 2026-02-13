@@ -7,6 +7,8 @@ import id.ac.ui.cs.advprog.individualpreparation.service.VectorUtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/vector")
 public class VectorUtilityController {
@@ -37,8 +39,8 @@ public class VectorUtilityController {
     @PostMapping("/multiply")
     public VectorResponse multiply(@RequestBody VectorRequest request){
         List<Integer> v1 = request.getV1();
-        List<Integer> x = request.getV2();
+        List<Integer> v2 = request.getV2();
 
-        return service.multiply(v1, x);
+        return service.multiply(v1, v2);
     }
 }
