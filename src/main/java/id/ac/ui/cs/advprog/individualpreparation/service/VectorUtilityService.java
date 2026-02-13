@@ -4,6 +4,7 @@ import id.ac.ui.cs.advprog.individualpreparation.dto.VectorResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -14,6 +15,19 @@ public class VectorUtilityService {
         int maximumSize = Math.max(v1.size(), v2.size());
         for(int index = 0; index < maximumSize; index++) {
             result.add(v1.get(index) + v2.get(index));
+        }
+        VectorResponse vectorResponse = new VectorResponse();
+        vectorResponse.setResult(result);
+        return vectorResponse;
+    }
+
+    public VectorResponse multiply(List<Integer> v1, List<Integer> x) {
+        int maximumSize = v1.size();
+        List<Integer> v2 = Collections.nCopies(maximumSize, x.getFirst());
+
+        List<Integer> result = new ArrayList<>();
+        for(int index = 0; index < maximumSize; index++) {
+            result.add(v1.get(index) * v2.get(index));
         }
         VectorResponse vectorResponse = new VectorResponse();
         vectorResponse.setResult(result);

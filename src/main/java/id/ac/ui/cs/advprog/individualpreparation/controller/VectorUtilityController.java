@@ -23,4 +23,12 @@ public class VectorUtilityController {
 
         return service.add(v1, v2);
     }
+
+    @PostMapping("/multiply")
+    public VectorResponse multiply(@RequestBody VectorRequest request){
+        List<Integer> v1 = request.getV1();
+        List<Integer> x = request.getV2();
+
+        return service.multiply(v1, x);
+    }
 }
