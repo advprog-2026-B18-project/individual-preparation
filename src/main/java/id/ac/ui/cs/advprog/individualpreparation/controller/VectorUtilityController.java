@@ -1,6 +1,6 @@
 package id.ac.ui.cs.advprog.individualpreparation.controller;
 
-import id.ac.ui.cs.advprog.individualpreparation.model.ScalarResponse;
+import id.ac.ui.cs.advprog.individualpreparation.dto.ScalarResponse;
 import id.ac.ui.cs.advprog.individualpreparation.dto.VectorRequest;
 import id.ac.ui.cs.advprog.individualpreparation.dto.VectorResponse;
 import id.ac.ui.cs.advprog.individualpreparation.service.VectorUtilityService;

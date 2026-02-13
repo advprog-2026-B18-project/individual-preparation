@@ -18,7 +18,7 @@ public class ArithmeticUtilityController {
 
     @PostMapping("/divide")
     public ArithmeticDivideResponse divide(@RequestBody ArithmeticDivideRequest request) {
-        return service.divide(request.getOperand1(), request.getOperand2());
+        return service.divide(request.getO1(), request.getO2());
     }
 
     @PostMapping("/subtract")
