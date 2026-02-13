@@ -22,20 +22,27 @@ public class GlobalExceptionHandler {
 
     // handle input tipe data yang salah (harusnya integer)
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<ErrorResponse> handleInvalidRequestBody(HttpMessageNotReadableException ex) {
+    public ResponseEntity<ErrorResponse> handleInvalidRequestBody(
+            HttpMessageNotReadableException ex) {
 
         ErrorResponse error =
-                new ErrorResponse("Invalid request body, input should be integer/vector of integer", "error");
+                new ErrorResponse(
+                        "Invalid request body, input should be integer/vector of integer",
+                        "error");
 
         return ResponseEntity.badRequest().body(error);
     }
 
     // handle format input yang salah
     @ExceptionHandler(NullPointerException.class)
-    public ResponseEntity<ErrorResponse> handleInvalidRequestBody(NullPointerException ex) {
+    public ResponseEntity<ErrorResponse> handleInvalidRequestBody(
+            NullPointerException ex) {
 
         ErrorResponse error =
-                new ErrorResponse("Invalid request body, use v1 and v2 for /vector endpoint, o1 and o2 for /arithmetic endpoint", "error");
+                new ErrorResponse(
+                        "Invalid request body, use v1 and v2 for /vector " +
+                                "endpoint, o1 and o2 for /arithmetic endpoint",
+                        "error");
 
         return ResponseEntity.badRequest().body(error);
     }
