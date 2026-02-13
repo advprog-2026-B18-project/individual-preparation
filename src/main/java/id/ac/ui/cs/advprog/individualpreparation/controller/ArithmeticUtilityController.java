@@ -17,6 +17,12 @@ public class ArithmeticUtilityController {
     @Autowired
     private ArithmeticUtilityService service;
 
+    @PostMapping("/subtract")
+    public ArithmeticResponse subtract(@RequestBody ArithmeticRequest request){
+        long o1 = request.getO1();
+        long o2 = request.getO2();
+
+        return service.subtract(o1, o2);
     @PostMapping("/exponent")
     public ArithmeticResponse exponent(@RequestBody ArithmeticRequest request){
         long o1 = request.getO1();
